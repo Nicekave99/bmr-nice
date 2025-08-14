@@ -450,26 +450,24 @@ export default function BMRCalculator() {
                       {activityData.map((activity, index) => (
                         <div
                           key={activity.key}
-                          className={`bg-gradient-to-br from-${activity.color}-50 to-${activity.color}-100 border-2 border-${activity.color}-200 rounded-2xl p-6 hover:scale-105 transition-all duration-300 hover:shadow-lg`}
+                          className={`${activity.bgClass} border-2 ${activity.borderClass} rounded-2xl p-6 hover:scale-105 transition-all duration-300 hover:shadow-lg`}
                           style={{ animationDelay: `${index * 100}ms` }}
                         >
                           <div className="text-center">
                             <div className="text-3xl mb-3">{activity.icon}</div>
                             <div
-                              className={`text-sm font-bold text-${activity.color}-800 mb-2`}
+                              className={`text-sm font-bold ${activity.textClass} mb-2`}
                             >
                               {activity.label}
                             </div>
                             <div
-                              className={`text-2xl lg:text-3xl font-bold text-${activity.color}-900 mb-2`}
+                              className={`text-2xl lg:text-3xl font-bold ${activity.numberClass} mb-2`}
                             >
                               {result.activityLevels[
                                 activity.key
                               ].toLocaleString()}
                             </div>
-                            <div
-                              className={`text-xs text-${activity.color}-600`}
-                            >
+                            <div className={`text-xs ${activity.descClass}`}>
                               {activity.description}
                             </div>
                           </div>
